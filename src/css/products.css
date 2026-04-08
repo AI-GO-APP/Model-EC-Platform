@@ -58,7 +58,9 @@
 
 /* --- 商品列表頁專用：sidebar 內已佔 240px，右側 grid 改為 3 欄 --- */
 .products-main .product-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
 }
 
 .products-toolbar {
