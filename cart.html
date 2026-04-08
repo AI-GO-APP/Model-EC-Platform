@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>購物車 | 示範商城</title>
+  <meta name="description" content="查看您的購物車商品。" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body data-page="cart">
+  <header id="site-header"></header>
+  <main>
+    <div class="container" style="padding: 2rem 0 4rem;">
+      <h1 data-i18n="cart.title">購物車</h1>
+      <div class="checkout-layout" style="margin-top:2rem;">
+        <div>
+          <!-- 空購物車 -->
+          <div class="cart-empty" id="cart-empty">
+            <div style="text-align:center; padding:3rem 0;">
+              <div style="font-size:4rem; margin-bottom:1rem;">🛒</div>
+              <h2 data-i18n="cart.empty">您的購物車是空的</h2>
+              <p data-i18n="cart.emptyDesc" style="color:var(--color-text-secondary); margin: 0.5rem 0 1.5rem;">快去探索精選商品吧！</p>
+              <a href="/products.html" class="btn btn--accent btn--pill btn--lg" data-i18n="cart.continueShopping">繼續購物</a>
+            </div>
+          </div>
+          <!-- 購物車列表（JS 動態渲染） -->
+          <div id="cart-items" style="display:none;"></div>
+          <div class="form-group" style="max-width:300px; margin-top:2rem;">
+            <label data-i18n="cart.discountCode">折扣碼</label>
+            <div style="display:flex;gap:0.5rem;">
+              <input type="text" placeholder="輸入折扣碼" />
+              <button class="btn btn--outline" data-i18n="cart.apply">套用</button>
+            </div>
+          </div>
+        </div>
+        <aside class="checkout-summary">
+          <h3 data-i18n="cart.orderSummary">訂單摘要</h3>
+          <div class="summary-row"><span data-i18n="common.subtotal">小計</span><span>NT$0</span></div>
+          <div class="summary-row"><span data-i18n="cart.shipping">運費</span><span data-i18n="cart.shippingCalc">結帳時計算</span></div>
+          <hr style="border:none;border-top:1px solid var(--color-border-light);margin:1rem 0;"/>
+          <div class="summary-row summary-total"><strong data-i18n="common.total">總計</strong><strong class="price" style="font-size:1.3rem;">NT$0</strong></div>
+          <a href="/checkout.html" class="btn btn--accent btn--full btn--lg" style="margin-top:1rem;" data-i18n="cart.proceedToCheckout">前往結帳</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/pages/cart.js"></script>
+</body>
+</html>

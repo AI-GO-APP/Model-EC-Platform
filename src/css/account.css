@@ -1,0 +1,494 @@
+/**
+ * 示範商城 — 帳戶頁面樣式
+ * 登入/註冊面板 + 會員中心佈局
+ */
+
+/* ============================================================
+   登入/註冊面板
+   ============================================================ */
+
+.auth-container {
+  max-width: 440px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl, 16px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.auth-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.auth-tab.active {
+  color: var(--color-primary);
+}
+
+.auth-tab.active::after {
+  transform: scaleX(1);
+}
+
+.auth-tab:hover:not(.active) {
+  color: var(--color-text);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.auth-form .form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--color-text-secondary);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.95rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 45,52,54), 0.1);
+}
+
+.auth-form input::placeholder {
+  color: var(--color-text-tertiary, #aaa);
+}
+
+/* 密碼輸入框 wrap */
+.password-input-wrap {
+  position: relative;
+}
+
+.password-input-wrap input {
+  padding-right: 3rem;
+}
+
+.pwd-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.pwd-toggle:hover,
+.pwd-toggle.active {
+  color: var(--color-primary);
+}
+
+/* 錯誤訊息 */
+.auth-error {
+  padding: 0.75rem 1rem;
+  background: rgba(220, 53, 69, 0.08);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: var(--radius-md, 8px);
+  color: var(--color-error, #dc3545);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+/* 按鈕全寬 */
+.btn--full {
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.btn-spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 分隔線 */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--color-text-tertiary);
+  font-size: 0.82rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.auth-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   會員中心佈局
+   ============================================================ */
+
+.account-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 側邊選單 */
+.account-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.account-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+}
+
+.account-nav-btn:hover {
+  background: var(--color-hover, rgba(0,0,0,0.04));
+  color: var(--color-text);
+}
+
+.account-nav-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.account-nav-btn.active svg {
+  stroke: #fff;
+}
+
+.account-nav-btn--danger:hover {
+  background: rgba(220, 53, 69, 0.08);
+  color: var(--color-error, #dc3545);
+}
+
+.account-sidebar-divider {
+  border: none;
+  border-top: 1px solid var(--color-border-light);
+  margin: 0.5rem 0;
+}
+
+/* 內容面板 */
+.account-tab-content {
+  display: none;
+}
+
+.account-tab-content.active {
+  display: block;
+  animation: fadeInTab 0.3s ease;
+}
+
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.account-content .card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg, 12px);
+  padding: 2rem;
+}
+
+.account-content .card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+/* 空狀態 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--color-text-tertiary);
+}
+
+.empty-state svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ============================================================
+   Header 用戶選單
+   ============================================================ */
+
+.nav-user-menu {
+  position: relative;
+}
+
+.nav-user-btn {
+  padding: 0 !important;
+}
+
+.nav-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), #636e72);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-user-avatar--lg {
+  width: 48px;
+  height: 48px;
+  font-size: 1.1rem;
+}
+
+.nav-user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.nav-user-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-user-info {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.nav-user-name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.nav-user-email {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.15rem;
+}
+
+.nav-user-dropdown hr {
+  border: none;
+  border-top: 1px solid var(--color-border-light);
+  margin: 0;
+}
+
+.nav-user-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.nav-user-link:hover {
+  background: var(--color-hover, rgba(0,0,0,0.04));
+  color: var(--color-text);
+}
+
+.nav-logout-btn:hover {
+  color: var(--color-error, #dc3545) !important;
+}
+
+/* 手機版用戶區塊 */
+.mobile-menu__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.mobile-menu__user-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.mobile-menu__user-email {
+  font-size: 0.82rem;
+  color: var(--color-text-tertiary);
+}
+
+/* ============================================================
+   訂單列表
+   ============================================================ */
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md, 8px);
+  transition: all 0.2s ease;
+}
+
+.order-card:hover {
+  border-color: var(--color-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.order-info strong {
+  font-size: 0.95rem;
+}
+
+.order-date {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.15rem;
+}
+
+/* ============================================================
+   響應式
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .auth-container {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg, 12px);
+  }
+
+  .account-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .account-sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .account-nav-btn {
+    white-space: nowrap;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .account-sidebar-divider {
+    display: none;
+  }
+
+  .account-nav-btn--danger {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>示範商城 | 質感，從細節開始</title>
+  <meta name="description" content="示範商城精選全球優質精品配件，包包、鞋款、飾品，打造您的質感生活。全館滿 NT$1,500 免運。" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:title" content="示範商城 | 質感，從細節開始" />
+  <meta property="og:description" content="精選全球優質精品配件，打造您的質感生活。" />
+  <meta property="og:type" content="website" />
+</head>
+<body data-page="home">
+
+  <!-- Header -->
+  <header id="site-header"></header>
+
+  <!-- 主要內容 -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__gradient"></div>
+      </div>
+      <div class="container hero__content">
+        <span class="hero__subtitle fade-in-up" data-i18n="nav.newArrivals">新品上市</span>
+        <h1 class="hero__title fade-in-up" data-i18n="brand.tagline">質感，從細節開始</h1>
+        <p class="hero__desc fade-in-up">探索我們精心挑選的全球精品配件系列，每一件都是對品質的堅持。</p>
+        <div class="hero__actions fade-in-up">
+          <a href="/products.html" class="btn btn--accent btn--lg btn--pill" data-i18n="common.shopNow">立即選購</a>
+          <a href="/collections.html" class="btn btn--outline btn--lg btn--pill" data-i18n="common.viewAll">查看全部</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精選分類 -->
+    <section class="section categories" id="categories">
+      <div class="container">
+        <h2 class="section__title fade-in-up" data-i18n="nav.collections">商品分類</h2>
+        <div class="categories-grid">
+          <a href="/products.html?cat=bags" class="category-card fade-in-up">
+            <div class="category-card__img" style="background: linear-gradient(135deg, #a0a0a0 0%, #6c6c6c 100%);"></div>
+            <div class="category-card__content">
+              <h3>經典包款</h3>
+              <span>Bags Collection</span>
+            </div>
+          </a>
+          <a href="/products.html?cat=shoes" class="category-card fade-in-up">
+            <div class="category-card__img" style="background: linear-gradient(135deg, #b68973 0%, #8b5e3c 100%);"></div>
+            <div class="category-card__content">
+              <h3>質感鞋履</h3>
+              <span>Shoes Collection</span>
+            </div>
+          </a>
+          <a href="/products.html?cat=accessories" class="category-card fade-in-up">
+            <div class="category-card__img" style="background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);"></div>
+            <div class="category-card__content">
+              <h3>精品飾件</h3>
+              <span>Accessories</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 熱銷商品 -->
+    <section class="section featured" id="featured">
+      <div class="container">
+        <div class="section__header fade-in-up">
+          <h2 class="section__title">熱銷精選</h2>
+          <a href="/products.html" class="section__link" data-i18n="common.viewAll">查看全部 →</a>
+        </div>
+        <div class="product-grid" id="featured-products">
+          <!-- JS 動態渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 品牌故事 -->
+    <section class="section story" id="story">
+      <div class="container story-split">
+        <div class="story__image fade-in-up">
+          <div class="story__img-placeholder" style="background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%); aspect-ratio: 4/3; border-radius: var(--radius-lg);"></div>
+        </div>
+        <div class="story__content fade-in-up">
+          <span class="story__label" data-i18n="about.story">品牌故事</span>
+          <h2 class="story__title">源自對細節的執著</h2>
+          <p class="story__text">我們走訪全球工坊，嚴選最優質的材料與工藝。每一件商品都承載著匠人的心血，只為帶給您最純粹的質感體驗。從義大利的頂級皮革到日本的精密五金，我們不放過任何一個細節。</p>
+          <a href="/about.html" class="btn btn--outline btn--pill" data-i18n="common.learnMore">了解更多</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 顧客評價 -->
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <h2 class="section__title fade-in-up" style="text-align:center;">顧客好評</h2>
+        <div class="reviews-grid">
+          <div class="review-card fade-in-up">
+            <div class="review-card__rating">★★★★★</div>
+            <p class="review-card__text">「包包的質感超乎預期，皮革手感非常好，縫線也很精緻。客服也很貼心！」</p>
+            <div class="review-card__author">— 陳小姐</div>
+          </div>
+          <div class="review-card fade-in-up">
+            <div class="review-card__rating">★★★★★</div>
+            <p class="review-card__text">「第二次購買了，鞋子穿起來很舒適。超商取貨也很方便，隔天就到了。」</p>
+            <div class="review-card__author">— 林先生</div>
+          </div>
+          <div class="review-card fade-in-up">
+            <div class="review-card__rating">★★★★☆</div>
+            <p class="review-card__text">「設計簡約大方，送禮也很適合。包裝精美，整體購物體驗很好。」</p>
+            <div class="review-card__author">— 王小姐</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 電子報 CTA -->
+    <section class="section cta-section" id="cta">
+      <div class="container">
+        <div class="cta-block fade-in-up">
+          <h2 class="cta-block__title" data-i18n="footer.newsletter">訂閱電子報</h2>
+          <p class="cta-block__desc" data-i18n="footer.newsletterDesc">訂閱以獲得最新優惠與新品資訊</p>
+          <form class="cta-block__form" onsubmit="return false;">
+            <input type="email" placeholder="輸入您的 Email" data-i18n="footer.emailPlaceholder" data-i18n-attr="placeholder" />
+            <button type="submit" class="btn btn--accent btn--lg" data-i18n="footer.subscribe">訂閱</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="site-footer"></footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/pages/home.js"></script>
+</body>
+</html>

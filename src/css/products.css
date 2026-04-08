@@ -1,0 +1,309 @@
+/* ============================================================
+   示範商城 — 商品詳情頁 (PDP) + 商品列表頁樣式
+   ============================================================ */
+
+/* --- 商品列表頁佈局 --- */
+.products-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-2xl);
+  padding: var(--space-xl) 0;
+}
+
+.filter-sidebar h3 { margin-bottom: var(--space-md); }
+
+.filter-group {
+  margin-bottom: var(--space-xl);
+}
+
+.filter-group h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.88rem;
+  padding: 0.3rem 0;
+  cursor: pointer;
+}
+
+.filter-group input[type="range"] {
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
+.filter-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.products-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.products-toolbar span {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.products-toolbar select {
+  width: auto;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   商品詳情頁 (PDP)
+   ============================================================ */
+.pdp-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-3xl);
+  padding: var(--space-xl) 0;
+}
+
+/* --- 圖片畫廊 --- */
+.pdp-gallery__main {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+}
+
+.pdp-gallery__thumbs {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.pdp-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.pdp-thumb.active, .pdp-thumb:hover {
+  border-color: var(--color-accent);
+}
+
+/* --- 商品資訊 --- */
+.pdp-info {
+  position: sticky;
+  top: calc(var(--header-height) + var(--announcement-height) + 2rem);
+  align-self: start;
+}
+
+.pdp-info__brand {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.pdp-info__name {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.pdp-info__sku {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  font-family: var(--font-price);
+  margin-bottom: var(--space-md);
+}
+
+.pdp-info__rating {
+  margin-bottom: var(--space-lg);
+}
+
+.pdp-info__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+/* --- 規格選擇 --- */
+.pdp-option-group {
+  margin-bottom: var(--space-lg);
+}
+
+.pdp-option-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+/* 顏色色塊 */
+.pdp-color-swatches {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.color-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+.color-swatch.active {
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+/* 尺寸按鈕 */
+.pdp-size-options {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.size-btn {
+  min-width: 48px;
+  height: 44px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all var(--transition-fast);
+  background: #fff;
+}
+
+.size-btn.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.size-btn:hover:not(.disabled) {
+  border-color: var(--color-primary);
+}
+
+.size-btn.disabled {
+  opacity: 0.35;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 庫存 */
+.pdp-stock {
+  margin-bottom: var(--space-lg);
+}
+
+/* 數量選擇器 */
+.pdp-qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.qty-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+
+.qty-btn:hover { background: var(--color-bg-alt); }
+
+.qty-input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 0.5rem;
+  font-family: var(--font-price);
+  font-weight: 600;
+}
+
+.qty-input:focus { box-shadow: none; }
+
+/* 手風琴 */
+.pdp-accordion__item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.pdp-accordion__item summary {
+  padding: var(--space-md) 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdp-accordion__item summary::after {
+  content: '+';
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  transition: transform var(--transition-fast);
+}
+
+.pdp-accordion__item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.pdp-accordion__content {
+  padding-bottom: var(--space-lg);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   響應式
+   ============================================================ */
+@media (max-width: 1024px) {
+  .products-layout { grid-template-columns: 200px 1fr; }
+}
+
+@media (max-width: 768px) {
+  .products-layout {
+    grid-template-columns: 1fr;
+  }
+  .filter-sidebar {
+    display: none; /* 之後改為 drawer */
+  }
+  .pdp-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .pdp-info {
+    position: static;
+  }
+  .pdp-info__name { font-size: 1.4rem; }
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>結帳 | 示範商城</title>
+  <meta name="description" content="安全結帳，支援多種付款方式與超商取貨。" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body data-page="checkout">
+  <header id="site-header"></header>
+  <main>
+    <div class="container" style="padding: 2rem 0 4rem;">
+      <h1 data-i18n="checkout.title" style="margin-bottom:2rem;">結帳</h1>
+
+      <!-- 四步驟進度條 -->
+      <div class="checkout-steps">
+        <div class="checkout-step active" data-step="1">
+          <span class="checkout-step__num">1</span>
+          <span class="checkout-step__label" data-i18n="checkout.step1">收件資訊</span>
+        </div>
+        <div class="checkout-step__line"></div>
+        <div class="checkout-step" data-step="2">
+          <span class="checkout-step__num">2</span>
+          <span class="checkout-step__label" data-i18n="checkout.step2">物流方式</span>
+        </div>
+        <div class="checkout-step__line"></div>
+        <div class="checkout-step" data-step="3">
+          <span class="checkout-step__num">3</span>
+          <span class="checkout-step__label" data-i18n="checkout.step3">發票資訊</span>
+        </div>
+        <div class="checkout-step__line"></div>
+        <div class="checkout-step" data-step="4">
+          <span class="checkout-step__num">4</span>
+          <span class="checkout-step__label" data-i18n="checkout.step4">付款方式</span>
+        </div>
+      </div>
+
+      <div class="checkout-layout">
+        <!-- 左側表單 -->
+        <div class="checkout-form">
+          <!-- Step 1: 收件資訊 -->
+          <section class="checkout-section" id="step-1">
+            <h2 data-i18n="checkout.step1">收件資訊</h2>
+            <div class="form-grid">
+              <div class="form-group">
+                <label data-i18n="checkout.name">姓名</label>
+                <input type="text" id="c-name" required placeholder="王大明" />
+              </div>
+              <div class="form-group">
+                <label data-i18n="checkout.phone">手機號碼</label>
+                <input type="tel" id="c-phone" required placeholder="0912-345-678" />
+              </div>
+              <div class="form-group full">
+                <label data-i18n="checkout.email">電子信箱</label>
+                <input type="email" id="c-email" required placeholder="example@mail.com" />
+              </div>
+              <div class="form-group">
+                <label data-i18n="checkout.zipCode">郵遞區號</label>
+                <input type="text" id="c-zip" placeholder="10617" />
+              </div>
+              <div class="form-group">
+                <label data-i18n="checkout.city">縣市</label>
+                <select id="c-city">
+                  <option>台北市</option><option>新北市</option><option>桃園市</option><option>台中市</option><option>台南市</option><option>高雄市</option><option>其他</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label data-i18n="checkout.address">地址</label>
+                <input type="text" id="c-address" required placeholder="大安區信義路三段 100 號" />
+              </div>
+              <div class="form-group full">
+                <label data-i18n="checkout.note">備註</label>
+                <textarea id="c-note" rows="2" data-i18n="checkout.notePlaceholder" data-i18n-attr="placeholder" placeholder="有什麼需要我們注意的嗎？"></textarea>
+              </div>
+            </div>
+            <button class="btn btn--accent btn--lg" onclick="goToStep(2)" data-i18n="checkout.next">下一步</button>
+          </section>
+
+          <!-- Step 2: 物流方式 -->
+          <section class="checkout-section hidden" id="step-2">
+            <h2 data-i18n="shipping.title">物流方式</h2>
+            <div class="shipping-options">
+              <label class="radio-card">
+                <input type="radio" name="shipping" value="home" checked />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🏠</span>
+                  <div>
+                    <strong data-i18n="shipping.homeDelivery">宅配到府</strong>
+                    <small data-i18n="shipping.homeDeliveryDesc">黑貓宅急便 / 新竹物流（1-3 工作天）</small>
+                  </div>
+                  <span class="radio-card__price">NT$80</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="shipping" value="711" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🏪</span>
+                  <div>
+                    <strong data-i18n="shipping.sevenEleven">7-ELEVEN 超商取貨</strong>
+                    <small>統一超商門市取貨</small>
+                  </div>
+                  <span class="radio-card__price">NT$60</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="shipping" value="family" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🏪</span>
+                  <div>
+                    <strong data-i18n="shipping.familyMart">全家便利商店取貨</strong>
+                    <small>全家門市取貨</small>
+                  </div>
+                  <span class="radio-card__price">NT$60</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="shipping" value="hilife" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🏪</span>
+                  <div>
+                    <strong data-i18n="shipping.hiLife">萊爾富超商取貨</strong>
+                    <small>萊爾富門市取貨</small>
+                  </div>
+                  <span class="radio-card__price">NT$60</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="shipping" value="post" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">📦</span>
+                  <div>
+                    <strong data-i18n="shipping.post">郵局包裹</strong>
+                    <small>中華郵政寄送</small>
+                  </div>
+                  <span class="radio-card__price">NT$70</span>
+                </div>
+              </label>
+            </div>
+            <p class="shipping-note" data-i18n="shipping.freeShippingNote" style="color:var(--color-success);font-size:0.85rem;margin-top:1rem;">滿 NT$1,500 免運費</p>
+            <div class="step-actions">
+              <button class="btn btn--ghost" onclick="goToStep(1)" data-i18n="checkout.prev">上一步</button>
+              <button class="btn btn--accent btn--lg" onclick="goToStep(3)" data-i18n="checkout.next">下一步</button>
+            </div>
+          </section>
+
+          <!-- Step 3: 統一發票 -->
+          <section class="checkout-section hidden" id="step-3">
+            <h2 data-i18n="invoice.title">發票資訊</h2>
+            <div class="invoice-options">
+              <label class="radio-card">
+                <input type="radio" name="invoice" value="mobile" checked />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">📱</span>
+                  <div>
+                    <strong data-i18n="invoice.mobileBarcode">雲端發票 — 手機條碼</strong>
+                    <span class="badge badge--new" data-i18n="invoice.recommended" style="margin-left:0.5rem;">推薦</span>
+                  </div>
+                </div>
+              </label>
+              <div class="invoice-field" id="invoice-mobile" style="padding:0 1rem 1rem;">
+                <input type="text" id="mobile-barcode" placeholder="/ABC1234" maxlength="8" />
+                <small data-i18n="invoice.mobileBarcodeHint" style="color:var(--color-text-secondary);">格式：/XXXXXXX（/ 開頭 + 7碼英數）</small>
+                <a href="https://www.einvoice.nat.gov.tw/" target="_blank" style="font-size:0.78rem;color:var(--color-accent);margin-top:0.3rem;display:block;" data-i18n="invoice.whatIsMobileBarcode">什麼是手機條碼？</a>
+              </div>
+
+              <label class="radio-card">
+                <input type="radio" name="invoice" value="member" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">👤</span>
+                  <div>
+                    <strong data-i18n="invoice.memberCarrier">雲端發票 — 會員載具</strong>
+                    <small>自動帶入會員資訊</small>
+                  </div>
+                </div>
+              </label>
+
+              <label class="radio-card">
+                <input type="radio" name="invoice" value="citizen" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🪪</span>
+                  <div>
+                    <strong data-i18n="invoice.citizenDigital">雲端發票 — 自然人憑證</strong>
+                  </div>
+                </div>
+              </label>
+              <div class="invoice-field hidden" id="invoice-citizen" style="padding:0 1rem 1rem;">
+                <input type="text" id="citizen-code" placeholder="AB12345678901234" maxlength="16" />
+                <small data-i18n="invoice.citizenDigitalHint">請輸入 16 碼自然人憑證條碼</small>
+              </div>
+
+              <label class="radio-card">
+                <input type="radio" name="invoice" value="donation" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">💝</span>
+                  <div>
+                    <strong data-i18n="invoice.donation">捐贈發票</strong>
+                  </div>
+                </div>
+              </label>
+              <div class="invoice-field hidden" id="invoice-donation" style="padding:0 1rem 1rem;">
+                <select id="donation-org" style="margin-bottom:0.5rem;">
+                  <option value="">選擇捐贈對象</option>
+                  <option value="25885">創世基金會 (25885)</option>
+                  <option value="8585">家扶基金會 (8585)</option>
+                  <option value="7788">陽光基金會 (7788)</option>
+                </select>
+                <input type="text" id="love-code" placeholder="或輸入愛心碼" />
+                <small data-i18n="invoice.donationHint">請選擇捐贈單位或輸入愛心碼</small>
+              </div>
+
+              <label class="radio-card">
+                <input type="radio" name="invoice" value="business" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🏢</span>
+                  <div>
+                    <strong data-i18n="invoice.business">公司戶三聯式</strong>
+                  </div>
+                </div>
+              </label>
+              <div class="invoice-field hidden" id="invoice-business" style="padding:0 1rem 1rem;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                  <div>
+                    <label data-i18n="invoice.taxId" style="font-size:0.85rem;font-weight:600;">統一編號</label>
+                    <input type="text" id="tax-id" placeholder="12345678" maxlength="8" />
+                  </div>
+                  <div>
+                    <label data-i18n="invoice.companyTitle" style="font-size:0.85rem;font-weight:600;">公司抬頭</label>
+                    <input type="text" id="company-title" placeholder="示範科技股份有限公司" />
+                  </div>
+                </div>
+                <small data-i18n="invoice.taxIdHint" style="color:var(--color-text-secondary);">請輸入 8 碼統一編號</small>
+              </div>
+            </div>
+            <div class="step-actions">
+              <button class="btn btn--ghost" onclick="goToStep(2)" data-i18n="checkout.prev">上一步</button>
+              <button class="btn btn--accent btn--lg" onclick="goToStep(4)" data-i18n="checkout.next">下一步</button>
+            </div>
+          </section>
+
+          <!-- Step 4: 付款方式 -->
+          <section class="checkout-section hidden" id="step-4">
+            <h2 data-i18n="payment.title">付款方式</h2>
+            <!-- 快速結帳 -->
+            <div class="express-checkout" style="margin-bottom:1.5rem;">
+              <p data-i18n="payment.expressCheckout" style="font-size:0.85rem;color:var(--color-text-secondary);margin-bottom:0.5rem;">快速結帳</p>
+              <div style="display:flex;gap:0.5rem;">
+                <button class="btn btn--outline" style="flex:1;">🍎 Apple Pay</button>
+                <button class="btn btn--outline" style="flex:1;">📱 Google Pay</button>
+                <button class="btn btn--outline" style="flex:1;background:#06C755;color:#fff;border:none;">LINE Pay</button>
+              </div>
+            </div>
+            <hr style="border:none;border-top:1px solid var(--color-border-light);margin:1.5rem 0;"/>
+            <div class="payment-options">
+              <label class="radio-card">
+                <input type="radio" name="payment" value="credit" checked />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">💳</span>
+                  <div>
+                    <strong data-i18n="payment.creditCard">信用卡</strong>
+                    <small data-i18n="payment.creditCardDesc">Visa / Mastercard / JCB</small>
+                  </div>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="payment" value="cvs" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🏪</span>
+                  <div>
+                    <strong data-i18n="payment.convenienceStore">超商代碼繳費</strong>
+                    <small data-i18n="payment.convenienceStoreDesc">取得繳費代碼至超商繳費</small>
+                  </div>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="payment" value="atm" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">🏧</span>
+                  <div>
+                    <strong data-i18n="payment.atm">ATM 虛擬帳號</strong>
+                    <small data-i18n="payment.atmDesc">銀行轉帳付款</small>
+                  </div>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="payment" value="cod" />
+                <div class="radio-card__inner">
+                  <span class="radio-card__icon">📦</span>
+                  <div>
+                    <strong data-i18n="payment.cod">貨到付款</strong>
+                    <small data-i18n="payment.codDesc">僅限宅配，加收 NT$30 手續費</small>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="step-actions">
+              <button class="btn btn--ghost" onclick="goToStep(3)" data-i18n="checkout.prev">上一步</button>
+              <button class="btn btn--accent btn--full btn--lg" id="btn-place-order" data-i18n="checkout.placeOrder">完成訂單</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- 右側訂單摘要 -->
+        <aside class="checkout-summary">
+          <h3 data-i18n="cart.orderSummary">訂單摘要</h3>
+          <div class="summary-items">
+            <div class="summary-item">
+              <div class="summary-item__img" style="background:linear-gradient(135deg,#636e72,#2d3436);"></div>
+              <div class="summary-item__info">
+                <span class="summary-item__name">經典摺疊手提包</span>
+                <small>經典黑 / S × 1</small>
+              </div>
+              <span class="summary-item__price">NT$12,800</span>
+            </div>
+          </div>
+          <hr style="border:none;border-top:1px solid var(--color-border-light);margin:1rem 0;"/>
+          <div class="summary-row">
+            <span data-i18n="common.subtotal">小計</span>
+            <span>NT$12,800</span>
+          </div>
+          <div class="summary-row">
+            <span data-i18n="shipping.fee">運費</span>
+            <span>NT$80</span>
+          </div>
+          <hr style="border:none;border-top:1px solid var(--color-border-light);margin:1rem 0;"/>
+          <div class="summary-row summary-total">
+            <strong data-i18n="common.total">總計</strong>
+            <strong class="price" style="font-size:1.3rem;">NT$12,880</strong>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/pages/checkout.js"></script>
+</body>
+</html>

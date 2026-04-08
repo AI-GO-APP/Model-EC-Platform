@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品詳情 | 示範商城</title>
+  <meta name="description" content="查看商品詳情、規格選擇與庫存資訊。" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/src/css/products.css" />
+</head>
+<body data-page="product-detail">
+  <header id="site-header"></header>
+  <main>
+    <div class="container" style="padding-top:2rem;">
+      <nav class="breadcrumb" id="breadcrumb">
+        <a href="/" data-i18n="nav.home">首頁</a>
+        <span class="breadcrumb__sep">/</span>
+        <a href="/products.html" data-i18n="nav.products">全部商品</a>
+        <span class="breadcrumb__sep">/</span>
+        <span id="bc-product-name">商品名稱</span>
+      </nav>
+
+      <div class="pdp-layout" id="pdp-layout">
+        <!-- 左側圖片 -->
+        <div class="pdp-gallery">
+          <div class="pdp-gallery__main" id="pdp-main-image">
+            <div style="background:linear-gradient(135deg,#636e72,#2d3436);width:100%;aspect-ratio:1;border-radius:var(--radius-lg);"></div>
+          </div>
+          <div class="pdp-gallery__thumbs" id="pdp-thumbs">
+            <div class="pdp-thumb active" style="background:linear-gradient(135deg,#636e72,#2d3436);"></div>
+            <div class="pdp-thumb" style="background:linear-gradient(135deg,#b68973,#8b5e3c);"></div>
+            <div class="pdp-thumb" style="background:linear-gradient(135deg,#34495e,#2c3e50);"></div>
+          </div>
+        </div>
+
+        <!-- 右側商品資訊 -->
+        <div class="pdp-info">
+          <div class="pdp-info__brand">示範商城</div>
+          <h1 class="pdp-info__name" id="pdp-name">經典摺疊手提包</h1>
+          <div class="pdp-info__sku" id="pdp-sku">SKU: FOLD-TOTE</div>
+          <div class="pdp-info__rating">
+            <span class="rating">★★★★★</span>
+            <span class="rating__count">(128 <span data-i18n="product.reviews">則評價</span>)</span>
+          </div>
+
+          <!-- 動態價格 -->
+          <div class="pdp-info__price" id="pdp-price">
+            <span class="price price--sale" style="font-size:1.6rem;">NT$12,800</span>
+            <span class="price price--original">NT$15,800</span>
+          </div>
+
+          <!-- 顏色選擇 -->
+          <div class="pdp-option-group" id="pdp-colors">
+            <label class="pdp-option-label"><span data-i18n="product.color">顏色</span>：<strong id="selected-color-name">經典黑</strong></label>
+            <div class="pdp-color-swatches">
+              <button class="color-swatch active" style="background:#2D3436;" data-color="black" title="經典黑"></button>
+              <button class="color-swatch" style="background:#A0522D;" data-color="cognac" title="白蘭地棕"></button>
+              <button class="color-swatch" style="background:#34495E;" data-color="navy" title="海軍藍"></button>
+            </div>
+          </div>
+
+          <!-- 尺寸選擇 -->
+          <div class="pdp-option-group" id="pdp-sizes">
+            <label class="pdp-option-label"><span data-i18n="product.size">尺寸</span>：<strong id="selected-size-name">M</strong></label>
+            <div class="pdp-size-options">
+              <button class="size-btn active" data-size="s">S</button>
+              <button class="size-btn" data-size="m">M</button>
+              <button class="size-btn disabled" data-size="l">L</button>
+            </div>
+          </div>
+
+          <!-- 庫存狀態 -->
+          <div class="pdp-stock" id="pdp-stock">
+            <span class="stock-status stock-status--low">僅剩 5 件</span>
+          </div>
+
+          <!-- 數量 -->
+          <div class="pdp-option-group">
+            <label class="pdp-option-label" data-i18n="product.quantity">數量</label>
+            <div class="pdp-qty">
+              <button class="qty-btn" id="qty-minus">−</button>
+              <input type="number" value="1" min="1" max="5" id="qty-input" class="qty-input" />
+              <button class="qty-btn" id="qty-plus">+</button>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <button class="btn btn--accent btn--full btn--lg" id="btn-add-cart" data-i18n="common.addToCart">加入購物車</button>
+          <button class="btn btn--outline btn--full" id="btn-wishlist" style="margin-top:0.5rem;" data-i18n="product.addToWishlist">加入願望清單</button>
+
+          <!-- 手風琴 -->
+          <div class="pdp-accordion" style="margin-top:2rem;">
+            <details class="pdp-accordion__item" open>
+              <summary data-i18n="product.description">商品描述</summary>
+              <div class="pdp-accordion__content">
+                <p>採用義大利頂級頭層牛皮，手工摺疊設計，獨特的結構感讓每一次使用都是一場視覺享受。搭配黃銅五金配件，質感與耐用性兼具。</p>
+              </div>
+            </details>
+            <details class="pdp-accordion__item">
+              <summary data-i18n="product.material">材質說明</summary>
+              <div class="pdp-accordion__content">
+                <p>外層：義大利頭層牛皮<br>內裡：進口棉質布料<br>五金：黃銅鍍金</p>
+              </div>
+            </details>
+            <details class="pdp-accordion__item">
+              <summary data-i18n="product.shipping">運送資訊</summary>
+              <div class="pdp-accordion__content">
+                <p>宅配：1-3 個工作天（滿 NT$1,500 免運）<br>超商取貨：2-5 個工作天</p>
+              </div>
+            </details>
+            <details class="pdp-accordion__item">
+              <summary data-i18n="product.faq">常見問題</summary>
+              <div class="pdp-accordion__content" itemscope itemtype="https://schema.org/FAQPage">
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                  <h4 itemprop="name" style="font-size:0.92rem;margin-bottom:0.3rem;">這款包包適合放筆電嗎？</h4>
+                  <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">M 尺寸可容納 13 吋筆電，L 尺寸可容納 15 吋筆電。內部設有防震隔層。</p>
+                  </div>
+                </div>
+                <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-top:1rem;">
+                  <h4 itemprop="name" style="font-size:0.92rem;margin-bottom:0.3rem;">皮革需要特殊保養嗎？</h4>
+                  <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">建議每月使用適量皮革保養油輕輕擦拭，避免長時間日曬。</p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- 推薦商品 -->
+      <section style="padding: 3rem 0;">
+        <h2 data-i18n="product.relatedProducts">您可能也喜歡</h2>
+        <div class="product-grid" id="related-products" style="margin-top:1.5rem;">
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/pages/product-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+{
+  "brand": {
+    "name": "示範商城",
+    "tagline": "質感，從細節開始"
+  },
+  "nav": {
+    "home": "首頁",
+    "collections": "商品分類",
+    "products": "全部商品",
+    "newArrivals": "新品上市",
+    "sale": "特賣",
+    "about": "關於我們",
+    "contact": "聯絡我們"
+  },
+  "common": {
+    "addToCart": "加入購物車",
+    "buyNow": "立即購買",
+    "viewDetails": "查看詳情",
+    "search": "搜尋商品...",
+    "login": "登入",
+    "register": "註冊",
+    "myAccount": "我的帳戶",
+    "cart": "購物車",
+    "wishlist": "願望清單",
+    "checkout": "結帳",
+    "continueShopping": "繼續購物",
+    "freeShipping": "全館滿 NT$1,500 免運費",
+    "newCollection": "探索新品系列",
+    "shopNow": "立即選購",
+    "learnMore": "了解更多",
+    "viewAll": "查看全部",
+    "loadMore": "載入更多",
+    "noResults": "找不到相關商品",
+    "sortBy": "排序方式",
+    "filter": "篩選",
+    "close": "關閉",
+    "remove": "移除",
+    "quantity": "數量",
+    "subtotal": "小計",
+    "total": "總計",
+    "empty": "目前沒有項目"
+  },
+  "product": {
+    "price": "價格",
+    "color": "顏色",
+    "size": "尺寸",
+    "quantity": "數量",
+    "sku": "商品編號",
+    "inStock": "有庫存",
+    "lowStock": "剩餘不多",
+    "outOfStock": "已售完",
+    "notifyMe": "到貨通知我",
+    "reviews": "則評價",
+    "writeReview": "撰寫評價",
+    "description": "商品描述",
+    "material": "材質說明",
+    "shipping": "運送資訊",
+    "returns": "退換貨政策",
+    "faq": "常見問題",
+    "relatedProducts": "您可能也喜歡",
+    "recentlyViewed": "最近瀏覽",
+    "addToWishlist": "加入願望清單",
+    "removeFromWishlist": "移除願望清單",
+    "specMatrix": "規格總覽",
+    "selectColor": "請選擇顏色",
+    "selectSize": "請選擇尺寸"
+  },
+  "cart": {
+    "title": "購物車",
+    "empty": "您的購物車是空的",
+    "emptyDesc": "快去探索精選商品吧！",
+    "continueShopping": "繼續購物",
+    "proceedToCheckout": "前往結帳",
+    "discountCode": "折扣碼",
+    "apply": "套用",
+    "orderSummary": "訂單摘要",
+    "shipping": "運費",
+    "shippingCalc": "結帳時計算",
+    "recommended": "為您推薦"
+  },
+  "checkout": {
+    "title": "結帳",
+    "step1": "收件資訊",
+    "step2": "物流方式",
+    "step3": "發票資訊",
+    "step4": "付款方式",
+    "next": "下一步",
+    "prev": "上一步",
+    "placeOrder": "完成訂單",
+    "name": "姓名",
+    "phone": "手機號碼",
+    "email": "電子信箱",
+    "address": "地址",
+    "zipCode": "郵遞區號",
+    "city": "縣市",
+    "district": "鄉鎮區",
+    "note": "訂單備註",
+    "notePlaceholder": "有什麼需要我們注意的嗎？"
+  },
+  "shipping": {
+    "title": "物流方式",
+    "homeDelivery": "宅配到府",
+    "homeDeliveryDesc": "黑貓宅急便 / 新竹物流（1-3 工作天）",
+    "sevenEleven": "7-ELEVEN 超商取貨",
+    "familyMart": "全家便利商店取貨",
+    "hiLife": "萊爾富超商取貨",
+    "post": "郵局包裹",
+    "selectStore": "選擇門市",
+    "freeShippingNote": "滿 NT$1,500 免運費",
+    "fee": "運費"
+  },
+  "invoice": {
+    "title": "發票資訊",
+    "mobileBarcode": "雲端發票 — 手機條碼",
+    "mobileBarcodeHint": "格式：/XXXXXXX（/ 開頭 + 7碼英數）",
+    "mobileBarcodePlaceholder": "/ABC1234",
+    "memberCarrier": "雲端發票 — 會員載具",
+    "citizenDigital": "雲端發票 — 自然人憑證",
+    "citizenDigitalHint": "請輸入 16 碼自然人憑證條碼",
+    "donation": "捐贈發票",
+    "donationHint": "請選擇捐贈單位或輸入愛心碼",
+    "loveCode": "愛心碼",
+    "business": "公司戶三聯式",
+    "taxId": "統一編號",
+    "taxIdHint": "請輸入 8 碼統一編號",
+    "companyTitle": "公司抬頭",
+    "whatIsMobileBarcode": "什麼是手機條碼？",
+    "recommended": "推薦"
+  },
+  "payment": {
+    "title": "付款方式",
+    "creditCard": "信用卡",
+    "creditCardDesc": "Visa / Mastercard / JCB",
+    "linePay": "LINE Pay",
+    "applePay": "Apple Pay",
+    "googlePay": "Google Pay",
+    "convenienceStore": "超商代碼繳費",
+    "convenienceStoreDesc": "取得繳費代碼至超商繳費",
+    "atm": "ATM 虛擬帳號",
+    "atmDesc": "銀行轉帳付款",
+    "cod": "貨到付款",
+    "codDesc": "僅限宅配，加收 NT$30 手續費",
+    "expressCheckout": "快速結帳"
+  },
+  "account": {
+    "title": "我的帳戶",
+    "profile": "個人資料",
+    "orders": "訂單記錄",
+    "addresses": "收件地址",
+    "wishlist": "願望清單",
+    "logout": "登出",
+    "loginTitle": "會員登入",
+    "registerTitle": "加入會員",
+    "orderHistory": "訂單歷史",
+    "noOrders": "目前沒有訂單"
+  },
+  "about": {
+    "title": "關於示範商城",
+    "story": "品牌故事",
+    "values": "我們的理念",
+    "team": "團隊介紹"
+  },
+  "contact": {
+    "title": "聯絡我們",
+    "form": "寄送訊息",
+    "subject": "主題",
+    "message": "訊息內容",
+    "send": "送出",
+    "info": "聯絡資訊",
+    "hours": "營業時間",
+    "address": "地址"
+  },
+  "footer": {
+    "about": "關於商城",
+    "aboutDesc": "示範商城精選全球優質精品配件，致力為您帶來兼具質感與功能的生活好物。",
+    "quickLinks": "快速連結",
+    "customerService": "顧客服務",
+    "followUs": "追蹤我們",
+    "newsletter": "訂閱電子報",
+    "newsletterDesc": "訂閱以獲得最新優惠與新品資訊",
+    "subscribe": "訂閱",
+    "emailPlaceholder": "輸入您的 Email",
+    "copyright": "© 2026 示範商城 DEMO SHOP. All rights reserved.",
+    "shippingPolicy": "運送政策",
+    "returnPolicy": "退換貨政策",
+    "privacyPolicy": "隱私權政策",
+    "termsOfService": "服務條款",
+    "faq": "常見問題"
+  },
+  "meta": {
+    "home": {
+      "title": "示範商城 | 質感，從細節開始",
+      "description": "示範商城精選全球優質精品配件，包包、鞋款、飾品，打造您的質感生活。全館滿 NT$1,500 免運。"
+    },
+    "products": {
+      "title": "全部商品 | 示範商城",
+      "description": "探索示範商城全系列商品，多款精品包包、鞋款任您挑選。"
+    },
+    "collections": {
+      "title": "商品分類 | 示範商城",
+      "description": "依分類瀏覽示範商城的精選系列商品。"
+    },
+    "cart": {
+      "title": "購物車 | 示範商城",
+      "description": "查看您的購物車商品。"
+    },
+    "checkout": {
+      "title": "結帳 | 示範商城",
+      "description": "安全結帳，支援多種付款方式與超商取貨。"
+    },
+    "about": {
+      "title": "關於我們 | 示範商城",
+      "description": "了解示範商城的品牌故事與理念。"
+    },
+    "contact": {
+      "title": "聯絡我們 | 示範商城",
+      "description": "有任何問題？歡迎聯絡示範商城客服團隊。"
+    }
+  }
+}

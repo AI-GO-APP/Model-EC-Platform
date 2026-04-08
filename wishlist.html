@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>願望清單 | 示範商城</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"/></head>
+<body data-page="wishlist">
+  <header id="site-header"></header>
+  <main>
+    <div class="container" style="padding:2rem 0 4rem;">
+      <h1 data-i18n="common.wishlist">願望清單</h1>
+      <div id="wishlist-empty" style="text-align:center;padding:4rem 0;">
+        <div style="font-size:4rem;margin-bottom:1rem;">♡</div>
+        <h2 data-i18n="common.empty">目前沒有項目</h2>
+        <p style="color:var(--color-text-secondary);margin:0.5rem 0 1.5rem;">將喜歡的商品加入願望清單，方便日後購買</p>
+        <a href="/products.html" class="btn btn--accent btn--pill btn--lg" data-i18n="common.shopNow">立即選購</a>
+      </div>
+      <div class="product-grid" id="wishlist-grid" style="display:none;margin-top:2rem;"></div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/pages/wishlist.js"></script>
+</body>
+</html>

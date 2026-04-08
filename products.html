@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全部商品 | 示範商城</title>
+  <meta name="description" content="探索示範商城全系列商品，多款精品包包、鞋款任您挑選。" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body data-page="products">
+  <header id="site-header"></header>
+  <main>
+    <div class="container" style="padding-top: 2rem;">
+      <nav class="breadcrumb">
+        <a href="/" data-i18n="nav.home">首頁</a>
+        <span class="breadcrumb__sep">/</span>
+        <span data-i18n="nav.products">全部商品</span>
+      </nav>
+
+      <div class="products-layout">
+        <!-- 篩選側欄 -->
+        <aside class="filter-sidebar" id="filter-sidebar">
+          <h3 data-i18n="common.filter">篩選</h3>
+          <div class="filter-group">
+            <h4>分類</h4>
+            <label><input type="checkbox" value="bags" /> 包包</label>
+            <label><input type="checkbox" value="shoes" /> 鞋款</label>
+            <label><input type="checkbox" value="accessories" /> 配件</label>
+            <label><input type="checkbox" value="wallets" /> 皮夾</label>
+          </div>
+          <div class="filter-group">
+            <h4>價格範圍</h4>
+            <input type="range" min="0" max="30000" value="30000" />
+            <div class="filter-range-labels"><span>NT$0</span><span>NT$30,000</span></div>
+          </div>
+        </aside>
+
+        <!-- 商品列表 -->
+        <section class="products-main">
+          <div class="products-toolbar">
+            <span id="product-count">20 件商品</span>
+            <select id="sort-select">
+              <option value="newest">最新上架</option>
+              <option value="price-asc">價格低到高</option>
+              <option value="price-desc">價格高到低</option>
+              <option value="popular">熱門推薦</option>
+            </select>
+          </div>
+          <div class="product-grid" id="products-grid">
+            <!-- JS 動態渲染 -->
+          </div>
+          <div class="products-load-more" style="text-align:center; padding: 2rem 0;">
+            <button class="btn btn--outline btn--pill" data-i18n="common.loadMore">載入更多</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/pages/products.js"></script>
+</body>
+</html>

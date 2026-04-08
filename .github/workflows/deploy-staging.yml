@@ -1,0 +1,20 @@
+# ============================================================
+# 部署到 Staging — EC Platform
+# ============================================================
+
+name: 部署到 Staging
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+
+jobs:
+  deploy:
+    uses: AI-GO-APP/.github/.github/workflows/staging-deploy.yml@main
+    with:
+      project-name: ${{ github.event.repository.name }}
+    secrets: inherit

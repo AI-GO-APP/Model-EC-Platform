@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品分類 | 示範商城</title>
+  <meta name="description" content="依分類瀏覽示範商城的精選系列商品。" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body data-page="collections">
+  <header id="site-header"></header>
+  <main>
+    <section class="collection-hero" style="background: linear-gradient(135deg, #dfe6e9, #b2bec3); padding: 4rem 0; text-align: center;">
+      <div class="container">
+        <h1 data-i18n="nav.collections">商品分類</h1>
+        <p style="color: var(--color-text-secondary); margin-top: 0.5rem;">探索我們精心策劃的系列</p>
+      </div>
+    </section>
+    <section class="container" style="padding: 3rem 0;">
+      <div class="categories-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        <a href="/products.html?cat=bags" class="category-card fade-in-up" style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#a0a0a0,#6c6c6c);"></div>
+          <div class="category-card__content" style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;">
+            <h3 style="color:#fff;font-size:1.3rem;">經典包款</h3><span style="opacity:.8;font-size:.82rem;">12 件商品</span>
+          </div>
+        </a>
+        <a href="/products.html?cat=shoes" class="category-card fade-in-up" style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#b68973,#8b5e3c);"></div>
+          <div class="category-card__content" style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;">
+            <h3 style="color:#fff;font-size:1.3rem;">質感鞋履</h3><span style="opacity:.8;font-size:.82rem;">8 件商品</span>
+          </div>
+        </a>
+        <a href="/products.html?cat=accessories" class="category-card fade-in-up" style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#2d3436,#636e72);"></div>
+          <div class="category-card__content" style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;">
+            <h3 style="color:#fff;font-size:1.3rem;">精品飾件</h3><span style="opacity:.8;font-size:.82rem;">6 件商品</span>
+          </div>
+        </a>
+        <a href="/products.html?cat=wallets" class="category-card fade-in-up" style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#74b9ff,#0984e3);"></div>
+          <div class="category-card__content" style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;">
+            <h3 style="color:#fff;font-size:1.3rem;">精緻皮夾</h3><span style="opacity:.8;font-size:.82rem;">5 件商品</span>
+          </div>
+        </a>
+        <a href="/products.html?cat=travel" class="category-card fade-in-up" style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#55efc4,#00b894);"></div>
+          <div class="category-card__content" style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;">
+            <h3 style="color:#fff;font-size:1.3rem;">旅行配件</h3><span style="opacity:.8;font-size:.82rem;">4 件商品</span>
+          </div>
+        </a>
+        <a href="/products.html?cat=new" class="category-card fade-in-up" style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; position:relative;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#e17055,#d35400);"></div>
+          <div class="category-card__content" style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);color:#fff;">
+            <h3 style="color:#fff;font-size:1.3rem;">新品上市</h3><span style="opacity:.8;font-size:.82rem;">全新系列</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
