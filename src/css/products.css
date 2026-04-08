@@ -31,6 +31,18 @@
   cursor: pointer;
 }
 
+.filter-group label input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+}
+
+.filter-group label span {
+  flex: 1;
+  min-width: 0;
+}
+
 .filter-group input[type="range"] {
   width: 100%;
   border: none;
@@ -42,6 +54,11 @@
   justify-content: space-between;
   font-size: 0.75rem;
   color: var(--color-text-secondary);
+}
+
+/* --- 商品列表頁專用：sidebar 內已佔 240px，右側 grid 改為 3 欄 --- */
+.products-main .product-grid {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .products-toolbar {
@@ -289,6 +306,7 @@
    ============================================================ */
 @media (max-width: 1024px) {
   .products-layout { grid-template-columns: 200px 1fr; }
+  .products-main .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
