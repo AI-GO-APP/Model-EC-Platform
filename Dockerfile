@@ -4,7 +4,7 @@ WORKDIR /app
 
 # 複製 package.json 和 package-lock.json (如果有) 先進行依賴安裝
 COPY package*.json ./
-RUN npm ci
+RUN npm install --ignore-scripts
 
 # 複製所有檔案
 COPY . .
