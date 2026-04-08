@@ -7,7 +7,7 @@
  * - 後端管理：API Key (X-API-Key) → /open/* 端點（僅限伺服器端）
  */
 
-import { API_BASE, APP_SLUG, STORAGE_KEYS } from './config.js';
+import { API_BASE, APP_SLUG, APP_DOMAIN, STORAGE_KEYS } from './config.js';
 
 // 儲存 key（來自 config.js 統一管理）
 const TOKEN_KEY = STORAGE_KEYS.ACCESS_TOKEN;
@@ -243,10 +243,26 @@ async function authFetch(url, options = {}) {
   return res;
 }
 
-/** Ext Proxy — 系統表操作 */
+// ============================================================
+// app_domain 隔離工具（§13 Data Domain Separation）
+// ============================================================
+
+/**
+ * 產生 app_domain ilike 過濾條件
+ * 注意：JSONB 序列化時冒號後可能帶空格，使用寬鬆通配符確保匹配
+ */
+function domainFilter() {
+  return { column: 'custom_data', op: 'ilike', value: `%app_domain%${APP_DOMAIN}%` };
+}
+/** 將 app_domain 注入 custom_data（寫入用，保留原有欄位） */
+function injectDomain(customData = {}) {
+  return { ...customData, app_domain: APP_DOMAIN };
+}
+
+/** Ext Proxy — 系統表操作（內建 app_domain 隔離） */
 export const proxy = {
   /**
-   * 查詢系統表
+   * 查詢系統表（自動注入 app_domain 過濾）
    * @param {string} table - 表名（如 'product_templates'）
    * @param {object} [options] - 查詢參數
    * @param {number} [options.limit] - 筆數限制
@@ -254,40 +270,36 @@ export const proxy = {
    * @param {string} [options.search] - 搜尋關鍵字
    * @param {Array} [options.filters] - 過濾條件
    * @param {Array} [options.order_by] - 排序
+   * @param {boolean} [options.skipDomain] - 是否跳過 domain 過濾（僅限內部遷移用）
    * @returns {Promise<Array>}
    */
   async list(table, options = {}) {
-    const params = new URLSearchParams();
-    if (options.limit) params.set('limit', options.limit);
-    if (options.offset) params.set('offset', options.offset);
-    if (options.search) params.set('search', options.search);
-
-    const qs = params.toString();
-    const url = `${API_BASE}/ext/proxy/${table}${qs ? '?' + qs : ''}`;
-
-    // POST 方式傳遞 filters 和 order_by（如有）
-    if (options.filters || options.order_by) {
-      const body = {};
-      if (options.filters) body.filters = options.filters;
-      if (options.order_by) body.order_by = options.order_by;
-      if (options.limit) body.limit = options.limit;
-      if (options.offset) body.offset = options.offset;
-      if (options.search) body.search = options.search;
-
-      const res = await authFetch(`${API_BASE}/ext/proxy/${table}/query`, {
-        method: 'POST',
-        body: JSON.stringify(body),
-      });
-      return res.json();
+    // 自動注入 app_domain 過濾（除非明確跳過）
+    const filters = [...(options.filters || [])];
+    if (!options.skipDomain) {
+      filters.push(domainFilter());
     }
 
-    const res = await authFetch(url);
+    // 有 filters 時一律走 POST /query（更可靠）
+    const body = {
+      filters,
+      ...(options.order_by ? { order_by: options.order_by } : {}),
+      ...(options.limit ? { limit: options.limit } : {}),
+      ...(options.offset ? { offset: options.offset } : {}),
+      ...(options.search ? { search: options.search } : {}),
+    };
+
+    const res = await authFetch(`${API_BASE}/ext/proxy/${table}/query`, {
+      method: 'POST',
+      body: JSON.stringify(body),
+    });
     return res.json();
   },
 
   /**
    * 取得單筆記錄 — 透過 query API 搭配 id 過濾
    * AI GO ext proxy 不支援 GET /{table}/{id}，需使用 POST /query
+   * 注意：by-id 查詢不需要 domain filter（id 本身已唯一）
    */
   async get(table, id) {
     const res = await authFetch(`${API_BASE}/ext/proxy/${table}/query`, {
@@ -302,10 +314,18 @@ export const proxy = {
   },
 
   /**
-   * 建立記錄
+   * 建立記錄（自動注入 app_domain 到 custom_data）
    * AI GO 回傳 { id, created_at, data: {...} }，這裡正規化為扁平物件
    */
-  async create(table, data) {
+  async create(table, payload) {
+    // 自動注入 app_domain 到 custom_data
+    const data = { ...payload };
+    if (data.custom_data !== undefined) {
+      data.custom_data = injectDomain(data.custom_data);
+    } else {
+      data.custom_data = injectDomain();
+    }
+
     const res = await authFetch(`${API_BASE}/ext/proxy/${table}`, {
       method: 'POST',
       body: JSON.stringify(data),

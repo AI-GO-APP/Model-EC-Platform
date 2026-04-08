@@ -18,6 +18,9 @@ const API_BASE = process.env.VITE_API_BASE || 'https://ai-go.app/api/v1';
 const APP_SLUG = process.env.VITE_APP_SLUG;
 const API_KEY = process.env.AIGO_API_KEY;
 
+/** App Domain 標識（與 src/js/utils/config.js 保持一致） */
+const APP_DOMAIN = 'ec-platform';
+
 if (!APP_SLUG || !API_KEY) {
   console.error('❗ 請在 .env 中設定 VITE_APP_SLUG 和 AIGO_API_KEY');
   process.exit(1);
@@ -158,6 +161,7 @@ async function testProductTemplates(token) {
   assert('image_url' in p, '有 image_url 欄位');
   assert('custom_data' in p, '有 custom_data 欄位');
   assert(typeof p.custom_data === 'object', 'custom_data 是物件');
+  assert(p.custom_data?.app_domain === APP_DOMAIN, `app_domain 為 '${APP_DOMAIN}' (實際: ${p.custom_data?.app_domain})`);
 
   // 2b. Get (單筆 — 使用 query API)
   console.log('\n2b. Get (透過 query)');
@@ -204,6 +208,7 @@ async function testSaleOrders(token, userId, productId) {
       note: 'E2E API 測試訂單',
       invoice_status: 'no',    // §8.4 enum: no|to_invoice|invoiced
       custom_data: {
+        app_domain: APP_DOMAIN,
         user_id: userId,
         customer_name: 'E2E Bot',
         customer_email: 'e2e@test.com',
@@ -252,6 +257,7 @@ async function testSaleOrders(token, userId, productId) {
   assert(getOrderRes.status === 200, `Get (query) 回傳 200`);
   assert(fetched?.id === orderId, 'Get 回傳正確 ID');
   assert(fetched?.custom_data?.user_id === userId, 'custom_data.user_id 正確');
+  assert(fetched?.custom_data?.app_domain === APP_DOMAIN, `custom_data.app_domain 正確 (實際: ${fetched?.custom_data?.app_domain})`);
   assert(fetched?.state === 'draft', `state 已寫入為 draft (實際: ${fetched?.state})`);
   assert(fetched?.amount_total === 2980, `amount_total 已寫入為 2980 (實際: ${fetched?.amount_total})`);
 
@@ -304,6 +310,7 @@ async function testSaleOrderLines(token, orderId, productId) {
       price_unit: 2980,
       price_total: 2980,
       custom_data: {
+        app_domain: APP_DOMAIN,
         product_template_id: productId,
         variant: null,
       },

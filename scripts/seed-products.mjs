@@ -15,6 +15,9 @@ if (!API_KEY) {
 // 圖片 base URL（部署後需替換為正式 URL）
 const IMG_BASE = '/images/products';
 
+/** App Domain 標識（與 src/js/utils/config.js 保持一致） */
+const APP_DOMAIN = 'ec-platform';
+
 const PRODUCTS = [
   {
     name: '經典摺疊手提包',
@@ -27,6 +30,7 @@ const PRODUCTS = [
     default_code: 'BAG-CLASSIC-001',
     image_url: `${IMG_BASE}/leather-bag.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Classic Leather Tote',
       description_en: 'Crafted from premium Italian vegetable-tanned leather with hand-polished finish.',
       category_display: '包款',
@@ -55,6 +59,7 @@ const PRODUCTS = [
     default_code: 'MUG-CRAFT-001',
     image_url: `${IMG_BASE}/ceramic-mug.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Artisan Ceramic Mug',
       description_en: 'Handcrafted by Taiwanese artisan, each piece is unique in texture and glaze.',
       category_display: '居家',
@@ -82,6 +87,7 @@ const PRODUCTS = [
     default_code: 'SCF-CASH-001',
     image_url: `${IMG_BASE}/wool-scarf.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Cashmere Wool Scarf',
       description_en: '100% cashmere goat wool, feather-light yet incredibly warm.',
       category_display: '配飾',
@@ -109,6 +115,7 @@ const PRODUCTS = [
     default_code: 'WCH-AUTO-001',
     image_url: `${IMG_BASE}/watch.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Minimalist Automatic Watch',
       description_en: 'Japanese Miyota movement, sapphire crystal, Italian leather strap.',
       category_display: '手錶',
@@ -136,6 +143,7 @@ const PRODUCTS = [
     default_code: 'CDL-SOY-001',
     image_url: `${IMG_BASE}/candle.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Soy Wax Scented Candle',
       description_en: 'Made with 100% natural soy wax and premium Grasse essential oils.',
       category_display: '居家',
@@ -163,6 +171,7 @@ const PRODUCTS = [
     default_code: 'SNK-LEATH-001',
     image_url: `${IMG_BASE}/sneakers.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Minimal Leather Sneakers',
       description_en: 'Full-grain calfskin upper with memory foam insole and lightweight EVA outsole.',
       category_display: '鞋履',
@@ -190,6 +199,7 @@ const PRODUCTS = [
     default_code: 'NTB-LEATH-001',
     image_url: `${IMG_BASE}/notebook.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Hand-Stitched Leather Journal',
       description_en: 'Vegetable-tanned cowhide, hand-stitched binding, develops patina over time.',
       category_display: '文具',
@@ -216,6 +226,7 @@ const PRODUCTS = [
     default_code: 'SUN-ACE-001',
     image_url: `${IMG_BASE}/sunglasses.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Acetate Sunglasses',
       description_en: 'Italian Mazzucchelli acetate frame with polarized UV400 lenses.',
       category_display: '配飾',
@@ -243,6 +254,7 @@ const PRODUCTS = [
     default_code: 'TEA-WABI-001',
     image_url: `${IMG_BASE}/tea-set.png`,
     custom_data: {
+      app_domain: APP_DOMAIN,
       name_en: 'Wabi-Sabi Ceramic Tea Set',
       description_en: 'Inspired by Japanese wabi-sabi aesthetics, matte white glaze, includes teapot and two cups.',
       category_display: '居家',
