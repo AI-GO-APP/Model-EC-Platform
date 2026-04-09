@@ -1,148 +1,462 @@
 [
   {
-    "id": "83a4e3fb-e2e6-412f-82df-4c228675eb3d",
-    "name": "925純銀鑲單顆天然珍珠項鍊",
+    "id": "242f0f78-f642-4332-b3a6-b1d9950cf74f",
+    "name": "侘寂白瓷茶具組",
     "type": "consu",
-    "list_price": 2480,
+    "list_price": 2980,
     "standard_price": null,
     "sale_ok": true,
     "active": true,
-    "description_sale": "天然淡水珍珠 / S925純銀防敏 / 長度可調 / 附珠寶盒",
+    "description": "靈感源自日本侘寂美學，啞光白釉瓷器，含一壺兩杯。高溫 1280°C 電窯燒製，釉面溫潤如玉。",
+    "description_sale": "啞光白釉 / 一壺兩杯 / 1280°C 窯燒 / 附木質托盤",
+    "default_code": "TEA-WABI-001",
+    "barcode": null,
     "categ_id": null,
-    "image_url": "/images/products/pearl-necklace.png",
-    "default_code": "ACC-PRL-001",
-    "custom_data": {
-      "tags": [
-        "氣質百搭",
-        "熱銷"
-      ],
-      "colors": [
-        {
-          "hex": "#F0F4F8",
-          "name": "銀白珍珠",
-          "available": true
-        }
-      ],
-      "rating": 4.9,
-      "name_en": "925 Silver Pearl Necklace",
-      "material": "S925純銀 / 天然淡水珍珠",
-      "app_domain": "ec-platform",
-      "pearl_size": "8mm",
-      "category_en": "Accessories",
-      "chain_length": "40cm + 5cm延長鍊",
-      "review_count": 215,
-      "description_en": "8mm freshwater pearl on an adjustable hypoallergenic 925 sterling silver chain.",
-      "category_display": "流行飾品"
-    }
-  },
-  {
-    "id": "389c2fea-f2fb-40af-ba33-fa147127bb89",
-    "name": "無印風原木圓潤收納盒",
-    "type": "consu",
-    "list_price": 890,
-    "standard_price": null,
-    "sale_ok": true,
-    "active": true,
-    "description_sale": "天然櫸木 / 無印極簡風 / 多功能收納 / 環保塗層",
-    "categ_id": null,
-    "image_url": "/images/products/wooden-box.png",
-    "default_code": "WDN-BOX-001",
-    "custom_data": {
-      "tags": [
-        "居家收納",
-        "環保材質"
-      ],
-      "colors": [
-        {
-          "hex": "#D7CCC8",
-          "name": "原木色",
-          "available": true
-        }
-      ],
-      "origin": "台灣設計 / 合作廠製造",
-      "rating": 4.7,
-      "name_en": "Minimalist Wooden Storage Box",
-      "material": "天然櫸木",
-      "app_domain": "ec-platform",
-      "dimensions": "長 20cm x 寬 12cm x 高 6cm",
-      "category_en": "Daily Necessities",
-      "review_count": 82,
-      "description_en": "Natural beech wood, Muji-style minimalist design for everyday storage.",
-      "category_display": "生活用品"
-    }
-  },
-  {
-    "id": "3a980c21-95ef-4f10-8938-5a7deffcbb75",
-    "name": "富士山手工琉璃清酒杯",
-    "type": "consu",
-    "list_price": 1580,
-    "standard_price": null,
-    "sale_ok": true,
-    "active": true,
-    "description_sale": "富士山造型 / 手工吹製琉璃 / 禮盒包裝 / 送禮首選",
-    "categ_id": null,
-    "image_url": "/images/products/fuji-glass.png",
-    "default_code": "GLS-FUJI-001",
+    "image_url": "/images/products/tea-set.png",
     "custom_data": {
       "tags": [
         "精選",
-        "送禮推薦",
-        "日本製"
+        "送禮推薦"
       ],
-      "colors": [
-        {
-          "hex": "#E0F7FA",
-          "name": "透明清輝",
-          "available": true
-        }
-      ],
-      "origin": "日本 東京都",
-      "rating": 4.8,
-      "name_en": "Mount Fuji Handmade Glass Cup",
-      "capacity": "280ml",
-      "material": "無鉛水晶玻璃",
+      "pieces": "1 壺 + 2 杯",
+      "rating": 4.9,
+      "name_en": "Wabi-Sabi Ceramic Tea Set",
+      "material": "高溫白瓷",
       "app_domain": "ec-platform",
-      "category_en": "Japanese Ceramics",
-      "review_count": 124,
-      "description_en": "Hand-blown glass cup featuring a Mount Fuji silhouette at the base. Beautiful light refraction.",
-      "category_display": "日製陶瓷"
+      "category_en": "Home",
+      "cup_capacity": "120ml",
+      "review_count": 38,
+      "description_en": "Inspired by Japanese wabi-sabi aesthetics, matte white glaze, includes teapot and two cups.",
+      "teapot_capacity": "400ml",
+      "category_display": "居家"
     }
   },
   {
-    "id": "89f04b4a-bb6c-4638-a0b0-5edc70734153",
-    "name": "日本有田燒-櫻花紋陶瓷深盤",
+    "id": "df542e4d-cb92-422c-91c9-a1cfdadfb812",
+    "name": "琥珀紋醋酸纖維太陽眼鏡",
+    "type": "consu",
+    "list_price": 3680,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": "義大利 Mazzucchelli 醋酸纖維鏡框，偏光鏡片提供 UV400 防護。經典圓角矩形設計，適合多種臉型。",
+    "description_sale": "義大利醋酸纖維 / 偏光鏡片 / UV400 / 附眼鏡盒",
+    "default_code": "SUN-ACE-001",
+    "barcode": null,
+    "categ_id": null,
+    "image_url": "/images/products/sunglasses.png",
+    "custom_data": {
+      "lens": "偏光 CR-39",
+      "tags": [
+        "精選"
+      ],
+      "colors": [
+        {
+          "hex": "#8D6E37",
+          "name": "琥珀紋",
+          "available": true
+        },
+        {
+          "hex": "#1C1C1C",
+          "name": "亮黑",
+          "available": true
+        },
+        {
+          "hex": "#A8A8A8",
+          "name": "透明灰",
+          "available": true
+        }
+      ],
+      "rating": 4.7,
+      "name_en": "Acetate Sunglasses",
+      "app_domain": "ec-platform",
+      "category_en": "Accessories",
+      "review_count": 41,
+      "uv_protection": "UV400",
+      "description_en": "Italian Mazzucchelli acetate frame with polarized UV400 lenses.",
+      "category_display": "配飾"
+    }
+  },
+  {
+    "id": "34a69fcd-0f35-45fa-859d-25dcc1c76a0c",
+    "name": "手縫皮革筆記本",
+    "type": "consu",
+    "list_price": 1680,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": "採用植鞣牛皮手工縫製，隨時間使用會產生獨特的皮革光澤。搭配 100gsm 無酸紙張，適合書寫、繪畫與筆記。",
+    "description_sale": "植鞣牛皮 / 手工縫製 / 100gsm 無酸紙 / A5 尺寸",
+    "default_code": "NTB-LEATH-001",
+    "barcode": null,
+    "categ_id": null,
+    "image_url": "/images/products/notebook.png",
+    "custom_data": {
+      "size": "A5 (148 x 210mm)",
+      "tags": [
+        "手作"
+      ],
+      "pages": 192,
+      "colors": [
+        {
+          "hex": "#5D4037",
+          "name": "深棕",
+          "available": true
+        },
+        {
+          "hex": "#A67B5B",
+          "name": "淺棕",
+          "available": true
+        }
+      ],
+      "rating": 4.8,
+      "name_en": "Hand-Stitched Leather Journal",
+      "app_domain": "ec-platform",
+      "category_en": "Stationery",
+      "review_count": 93,
+      "description_en": "Vegetable-tanned cowhide, hand-stitched binding, develops patina over time.",
+      "category_display": "文具"
+    }
+  },
+  {
+    "id": "709bbe8e-c89b-4f0f-9b56-2378be4c3924",
+    "name": "極簡皮革運動鞋",
+    "type": "consu",
+    "list_price": 5980,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": "全粒面小牛皮鞋面，記憶棉鞋墊，輕量化 EVA 大底。極簡設計從街頭到辦公室都能駕馭。",
+    "description_sale": "全粒面小牛皮 / 記憶棉鞋墊 / EVA 輕量大底",
+    "default_code": "SNK-LEATH-001",
+    "barcode": null,
+    "categ_id": null,
+    "image_url": "/images/products/sneakers.png",
+    "custom_data": {
+      "tags": [
+        "新品"
+      ],
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "colors": [
+        {
+          "hex": "#FFFFFF",
+          "name": "純白",
+          "available": true
+        },
+        {
+          "hex": "#F5F0E8",
+          "name": "米白",
+          "available": true
+        },
+        {
+          "hex": "#2D3436",
+          "name": "黑色",
+          "available": true
+        }
+      ],
+      "rating": 4.5,
+      "name_en": "Minimal Leather Sneakers",
+      "material": "全粒面小牛皮",
+      "app_domain": "ec-platform",
+      "category_en": "Shoes",
+      "review_count": 67,
+      "description_en": "Full-grain calfskin upper with memory foam insole and lightweight EVA outsole.",
+      "category_display": "鞋履"
+    }
+  },
+  {
+    "id": "b1a1e08e-81e2-4dcf-8304-4b39cb46bf48",
+    "name": "天然大豆香氛蠟燭",
+    "type": "consu",
+    "list_price": 980,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": "100% 天然大豆蠟，添加法國 Grasse 頂級精油。木蓋密封設計，燃燒時間長達 45 小時，低煙無毒，營造溫馨居家氛圍。",
+    "description_sale": "天然大豆蠟 / Grasse 精油 / 45hrs 燃燒 / 木蓋密封",
+    "default_code": "CDL-SOY-001",
+    "barcode": null,
+    "categ_id": null,
+    "image_url": "/images/products/candle.png",
+    "custom_data": {
+      "tags": [
+        "熱銷",
+        "送禮推薦"
+      ],
+      "rating": 4.9,
+      "scents": [
+        {
+          "name": "白茶與鼠尾草",
+          "available": true
+        },
+        {
+          "name": "雪松與琥珀",
+          "available": true
+        },
+        {
+          "name": "薰衣草與佛手柑",
+          "available": true
+        }
+      ],
+      "weight": "220g",
+      "name_en": "Soy Wax Scented Candle",
+      "burn_time": "45 小時",
+      "app_domain": "ec-platform",
+      "category_en": "Home",
+      "review_count": 215,
+      "description_en": "Made with 100% natural soy wax and premium Grasse essential oils.",
+      "category_display": "居家"
+    }
+  },
+  {
+    "id": "a941d86a-afb3-4d96-afcd-7ec14b0b0b94",
+    "name": "極簡自動機械錶",
+    "type": "consu",
+    "list_price": 18500,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": "日本 Miyota 自動機械機芯，藍寶石鏡面，316L 不鏽鋼錶殼搭配義大利小牛皮錶帶。防水 50 米，適合日常佩戴。",
+    "description_sale": "Miyota 機芯 / 藍寶石鏡面 / 50M 防水 / 皮革錶帶",
+    "default_code": "WCH-AUTO-001",
+    "barcode": null,
+    "categ_id": null,
+    "image_url": "/images/products/watch.png",
+    "custom_data": {
+      "tags": [
+        "新品",
+        "限量"
+      ],
+      "colors": [
+        {
+          "hex": "#1B2631",
+          "name": "深藍面",
+          "available": true
+        },
+        {
+          "hex": "#ECF0F1",
+          "name": "銀白面",
+          "available": true
+        }
+      ],
+      "rating": 4.6,
+      "name_en": "Minimalist Automatic Watch",
+      "movement": "Miyota 9015 自動機械",
+      "case_size": "40mm",
+      "app_domain": "ec-platform",
+      "category_en": "Watches",
+      "review_count": 34,
+      "description_en": "Japanese Miyota movement, sapphire crystal, Italian leather strap.",
+      "category_display": "手錶",
+      "water_resistance": "50M"
+    }
+  },
+  {
+    "id": "304cac73-2037-4798-8a0d-9588366c8cc5",
+    "name": "喀什米爾羊毛圍巾",
+    "type": "consu",
+    "list_price": 4680,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": "100% 喀什米爾山羊絨，輕如鴻毛卻溫暖厚實。優雅的駝色調搭配捲邊設計，是秋冬穿搭的百搭單品。",
+    "description_sale": "100% 喀什米爾 / 手感柔軟 / 200x70cm / 附品牌禮盒",
+    "default_code": "SCF-CASH-001",
+    "barcode": null,
+    "categ_id": null,
+    "image_url": "/images/products/wool-scarf.png",
+    "custom_data": {
+      "tags": [
+        "精選",
+        "送禮推薦"
+      ],
+      "colors": [
+        {
+          "hex": "#C4A882",
+          "name": "駝色",
+          "available": true
+        },
+        {
+          "hex": "#636E72",
+          "name": "煙灰",
+          "available": true
+        },
+        {
+          "hex": "#6D1F3A",
+          "name": "酒紅",
+          "available": true
+        }
+      ],
+      "rating": 4.7,
+      "name_en": "Cashmere Wool Scarf",
+      "material": "100% 喀什米爾山羊絨",
+      "app_domain": "ec-platform",
+      "dimensions": "200 x 70 cm",
+      "category_en": "Accessories",
+      "review_count": 52,
+      "description_en": "100% cashmere goat wool, feather-light yet incredibly warm.",
+      "category_display": "配飾"
+    }
+  },
+  {
+    "id": "ad25fa9a-d871-4818-b634-81d9aba0d370",
+    "name": "職人手作陶瓷杯",
     "type": "consu",
     "list_price": 1280,
     "standard_price": null,
     "sale_ok": true,
     "active": true,
-    "description_sale": "日本手工繪製 / 櫻花圖騰 / 適用微波爐 / 直徑21cm",
+    "description": "由台灣在地陶藝師手工拉坯燒製，每件色澤紋理略有不同，獨一無二。適合咖啡、茶飲、早餐穀物等多種用途。",
+    "description_sale": "台灣手作 / 窯燒陶瓷 / 容量 350ml / 可微波",
+    "default_code": "MUG-CRAFT-001",
+    "barcode": null,
     "categ_id": null,
-    "image_url": "/images/products/arita-plate.png",
-    "default_code": "ART-PLT-001",
+    "image_url": "/images/products/ceramic-mug.png",
     "custom_data": {
       "tags": [
-        "新品",
-        "日本製",
-        "熱銷"
+        "手作",
+        "限量"
       ],
       "colors": [
         {
-          "hex": "#FFF5F8",
-          "name": "白底粉櫻",
+          "hex": "#B2BEC3",
+          "name": "霧灰",
+          "available": true
+        },
+        {
+          "hex": "#F5F0E8",
+          "name": "奶白",
+          "available": true
+        },
+        {
+          "hex": "#2C3E6B",
+          "name": "靛藍",
           "available": true
         }
       ],
-      "origin": "日本 佐賀縣有田町",
       "rating": 4.9,
-      "name_en": "Arita-yaki Sakura Deep Plate",
+      "name_en": "Artisan Ceramic Mug",
+      "capacity": "350ml",
       "material": "高溫窯燒陶瓷",
       "app_domain": "ec-platform",
-      "dimensions": "直徑 21cm x 高 4.5cm",
-      "category_en": "Japanese Ceramics",
-      "review_count": 56,
-      "description_en": "Traditional Japanese Arita porcelain with hand-painted cherry blossom patterns.",
-      "category_display": "日製陶瓷"
+      "category_en": "Home",
+      "review_count": 86,
+      "description_en": "Handcrafted by Taiwanese artisan, each piece is unique in texture and glaze.",
+      "category_display": "居家"
+    }
+  },
+  {
+    "id": "020a4fe3-8139-4605-9849-f25d4ac63969",
+    "name": "經典摺疊手提包",
+    "type": "consu",
+    "list_price": 12800,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": "採用頂級義大利植鞣皮革，手工打磨，經久耐用。極簡設計搭配可拆卸肩帶，滿足日常通勤與週末出遊的多種需求。",
+    "description_sale": "義大利植鞣皮革 / 手工打磨 / 可拆卸肩帶 / 內置拉鏈口袋",
+    "default_code": "BAG-CLASSIC-001",
+    "barcode": null,
+    "categ_id": null,
+    "image_url": "/images/products/leather-bag.png",
+    "custom_data": {
+      "tags": [
+        "新品",
+        "熱銷"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        {
+          "hex": "#2D3436",
+          "name": "經典黑",
+          "available": true
+        },
+        {
+          "hex": "#8B6914",
+          "name": "焦糖棕",
+          "available": true
+        },
+        {
+          "hex": "#2D5016",
+          "name": "墨綠",
+          "available": false
+        }
+      ],
+      "rating": 4.8,
+      "weight": "0.6kg",
+      "name_en": "Classic Leather Tote",
+      "material": "義大利植鞣皮革",
+      "app_domain": "ec-platform",
+      "category_en": "Bags",
+      "review_count": 128,
+      "description_en": "Crafted from premium Italian vegetable-tanned leather with hand-polished finish.",
+      "category_display": "包款"
+    }
+  },
+  {
+    "id": "2a225d37-7efe-46af-b30d-1535a6195e19",
+    "name": "PostRebuildTest",
+    "type": "consu",
+    "list_price": 100,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": null,
+    "description_sale": null,
+    "default_code": null,
+    "barcode": null,
+    "categ_id": null,
+    "image_url": null,
+    "custom_data": {
+      "app_domain": "ec-platform"
+    }
+  },
+  {
+    "id": "8491e714-41e7-44b7-9dc4-5ace8bae843c",
+    "name": "FinalTest",
+    "type": "consu",
+    "list_price": 50,
+    "standard_price": null,
+    "sale_ok": true,
+    "active": true,
+    "description": null,
+    "description_sale": null,
+    "default_code": null,
+    "barcode": null,
+    "categ_id": null,
+    "image_url": null,
+    "custom_data": {
+      "app_domain": "ec-platform"
+    }
+  },
+  {
+    "id": "fdcde6d6-120f-4abc-9323-bb32f35c3f34",
+    "name": "SeedProdA",
+    "type": "product",
+    "list_price": 500,
+    "standard_price": 300,
+    "sale_ok": true,
+    "active": true,
+    "description": null,
+    "description_sale": null,
+    "default_code": null,
+    "barcode": null,
+    "categ_id": "3010d58e-7b74-448a-98fa-d47df78ab8b7",
+    "image_url": null,
+    "custom_data": {
+      "app_domain": "ec-platform"
     }
   }
 ]

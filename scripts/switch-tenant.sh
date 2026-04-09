@@ -11,10 +11,21 @@
 #     --login-url "https://ai-go.app/api/v1/custom-app-auth/a1b2c3d4e5f6/login" \
 #     --register-url "https://ai-go.app/api/v1/custom-app-auth/a1b2c3d4e5f6/register"
 #
+# 此腳本完成 Step 1-4（本機操作）：
+#   1. 產生 .env + .env.production
+#   2. 驗證端點連通性
+#   3. 匯入展示商品
+#   4. 產生公開商品快取
+#
+# 完成後需手動 commit + push 觸發 CI/CD 部署（Step 5）：
+#   git add .env.production public/data/cache/
+#   git commit -m "chore: 切換租戶至 <租戶名稱>"
+#   git push origin main
+#
 # 前置條件：
-#   - 目標租戶的 Custom App 已由管理員開好（含系統表引用）
+#   - 目標租戶的 Custom App 已由管理員開好（含已發佈的系統表引用）
 #   - 當前目錄為 EC Platform 專案根目錄
-#   - 已安裝 Node.js、Docker、curl
+#   - 已安裝 Node.js、curl
 #
 # 詳細說明請參考 docs/tenant-integration-guide.md
 # ==================================================================
@@ -206,38 +217,43 @@ echo -e "${CYAN}Step 4: 產生公開商品快取${NC}"
 node scripts/generate-cache.mjs
 
 # ══════════════════════════════════════════════
-# Step 5：重新建置 Docker 容器（可選）
+# Step 5：提示 commit + push 觸發 CI/CD 部署
 # ══════════════════════════════════════════════
 echo ""
+echo -e "${CYAN}Step 5: 提交變更並觸發 CI/CD 部署${NC}"
 if [[ "$SKIP_DOCKER" == "true" ]]; then
-  echo -e "${YELLOW}Step 5: 跳過 Docker 重建（--skip-docker）${NC}"
-  echo "  請手動執行："
-  echo "    docker compose -f docker-compose.staging.yml build --no-cache"
-  echo "    docker compose -f docker-compose.staging.yml up -d"
+  echo -e "  ${YELLOW}請手動執行以下 git 指令觸發 CI/CD 部署：${NC}"
 else
-  echo -e "${CYAN}Step 5: 重新建置 Docker 容器${NC}"
-  docker compose -f docker-compose.staging.yml build --no-cache
-  docker compose -f docker-compose.staging.yml up -d
-  echo -e "  ${GREEN}✅ Docker 容器已重新部署${NC}"
-  docker compose -f docker-compose.staging.yml ps
+  echo -e "  ${YELLOW}請執行以下 git 指令觸發 CI/CD 部署：${NC}"
 fi
+echo ""
+echo "    git add .env.production public/data/cache/"
+echo "    git commit -m \"chore: 切換租戶至 <租戶名稱>\""
+echo "    git push origin main"
+echo ""
+echo -e "  Push 後 GitHub Actions 會自動 build Docker 並部署到 staging VM。"
+echo -e "  部署通常需要 1-3 分鐘，可在 GitHub Actions 頁面追蹤進度。"
 
 # ══════════════════════════════════════════════
-# Step 6：端到端驗證
+# Step 6：E2E 驗證（部署完成後執行）
 # ══════════════════════════════════════════════
 echo ""
-echo -e "${CYAN}Step 6: 執行 E2E 測試${NC}"
-node scripts/e2e-api-test.mjs
+echo -e "${CYAN}Step 6: E2E 測試（部署完成後執行）${NC}"
+echo -e "  部署完成後，執行以下指令驗證："
+echo "    npm test"
+echo ""
 
 # ══════════════════════════════════════════════
-# 完成
+# 完成（本機部分）
 # ══════════════════════════════════════════════
 echo ""
 echo -e "${GREEN}╔══════════════════════════════════════════════╗${NC}"
-echo -e "${GREEN}║  ✅ 租戶抽換完成！                           ║${NC}"
+echo -e "${GREEN}║  ✅ 本機操作完成（Step 1-4）                 ║${NC}"
 echo -e "${GREEN}╚══════════════════════════════════════════════╝${NC}"
 echo ""
-echo "  環境變數 → .env / .env.production"
-echo "  商品快取 → public/data/cache/product_templates.json"
-echo "  指引文件 → docs/tenant-integration-guide.md"
+echo "  .env              → 本機腳本用（gitignored）"
+echo "  .env.production   → 需 commit + push（git tracked）"
+echo "  商品快取           → public/data/cache/（需 commit + push）"
+echo ""
+echo -e "  ${YELLOW}⏳ 下一步：commit + push → 等待 CI/CD 部署 → npm test 驗證${NC}"
 echo ""
