@@ -12,7 +12,8 @@
     "test": "node scripts/e2e-api-test.mjs",
     "setup": "node scripts/setup-references.mjs",
     "seed": "node scripts/seed-products.mjs",
-    "cache:products": "node scripts/generate-cache.mjs"
+    "cache:products": "node scripts/generate-cache.mjs",
+    "switch-tenant": "bash scripts/switch-tenant.sh"
   },
   "devDependencies": {
     "dotenv": "^17.4.1",
